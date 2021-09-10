@@ -1,6 +1,6 @@
 # UART transmitter<br><br>
 
-A UART transmitter with bauds, data width, parity and stop bits configuration.
+A UART transmitter with bauds, data width, parity and stop bit configuration.
 
 The following diagram corresponds to the top level file. The clock signal net is shown in red, reset signal is shown in aqua. Thin signals correspond to a width of 1 bit, thick signals to a width of n bits.
 
