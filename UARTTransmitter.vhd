@@ -2,8 +2,8 @@
 
 -- UART Transmitter.
 -- Miguel Gerardo Narváez González.
--- V1.0.
--- 11/09/21.	 
+-- v1.0.
+-- September 9, 21.	 
 
 -- This file contains the UART transmitter.  This transmitter is able to transmit up to 8 bits of serial data, 1 start bit, 0, 1 or 2 stop bits,
 -- and optional 0 or 1 even parity bit.  When a data package is send, SNDREADY is set to high for 1 clock cicle. UART configuration can be set in 
