@@ -1,9 +1,12 @@
 LIBRARY IEEE;
-USE IEEE.std_logic_1164.ALL;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
 
 ENTITY Timer IS
 	GENERIC(
-	TICKS: integer:=10
+	TICKS: integer:=10;
+	BUSWIDTH: integer:=4
 	);
 	PORT(
 	RST: IN std_logic;
@@ -14,16 +17,16 @@ ENTITY Timer IS
 END Timer;
 
 ARCHITECTURE Behavioral OF Timer IS
-SIGNAL Cp, Cn: integer:=0;
+SIGNAL Cp, Cn: std_logic_vector(BUSWIDTH-1 DOWNTO 0):=(OTHERS=>'0');
 BEGIN		
 	
 	Combinational: PROCESS(Cp)
 	BEGIN				   
-		IF Cp = TICKS THEN
-			Cn<= 0;
+		IF Cp = std_logic_vector(to_unsigned(TICKS, Cp'length)) THEN
+			Cn<=(OTHERS=>'0');
 			SYN<='1';
 		ELSE
-			Cn<= Cp + 1;
+			Cn<= std_logic_vector(unsigned(Cp) + 1);
 			SYN<='0';	  
 		END IF;
 	END PROCESS Combinational;
@@ -32,7 +35,7 @@ BEGIN
 	Sequential: PROCESS(RST,CLK)
 	BEGIN		
 		IF RST='0' THEN
-			Cp<=0;
+			Cp<=(OTHERS=>'0');
 		ELSIF CLK'event AND CLK='1' THEN
 			Cp<=Cn;
 		END IF;	
