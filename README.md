@@ -1,6 +1,6 @@
 # UART transmitter<br><br>
 
-## Descrption:
+## Description:
 A UART transmitter with bauds, data width, even parity and stop bit configuration.
 The amount of resources consumed by this implementation with 115200 bauds, 8 data bits, 1 parity bit and 1 stop bit are: <strong>36 LUTs + 35 FFs</strong> (Vivado 19.1, Build 2552052).
 
