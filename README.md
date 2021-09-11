@@ -6,7 +6,7 @@ The following diagram corresponds to the top level file. The clock signal net is
 
 ![Circuit's diagram](SerialTx.png)
 
-The amount of resources consumed by this implementation are: <strong>92 LUTs + 80 FFs</strong> (Vivado 19.1).
+The amount of resources consumed by this implementation with 9600 bauds, 8 data bits, 1 parity bit and 1 stop bit are: <strong>92 LUTs + 80 FFs</strong> (Vivado 19.1).
 
 
 
